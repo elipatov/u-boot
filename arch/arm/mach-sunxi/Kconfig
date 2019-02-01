@@ -290,11 +290,20 @@ config MACH_SUN50I
 	select SUNXI_A64_TIMER_ERRATUM
 
 config MACH_SUN50I_H5
-	bool "sun50i (Allwinner H5)"
-	select ARM64
+	bool
 	select MACH_SUNXI_H3_H5
 	select FIT
 	select SPL_LOAD_FIT
+
+config MACH_SUN50I_H5_64
+	bool "sun50i (Allwinner H5)"
+	select MACH_SUN50I_H5
+	select ARM64
+
+config MACH_SUN50I_H5_32
+	bool "sun50i-32 (Allwinner H5)"
+	select MACH_SUN50I_H5
+	select CPU_V7A
 
 config MACH_SUN50I_H6
 	bool "sun50i (Allwinner H6)"
